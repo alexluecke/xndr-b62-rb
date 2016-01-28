@@ -1,4 +1,4 @@
-require_relative '../src/hasher.rb'
+require_relative '../lib/hasher.rb'
 require 'test/unit'
 
 class TestHasher < Test::Unit::TestCase

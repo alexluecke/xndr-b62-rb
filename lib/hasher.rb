@@ -42,8 +42,6 @@ module Hasher
       str += mapper(num % @base)
       num = num / @base
     end
-
     return str
-
   end
 end
