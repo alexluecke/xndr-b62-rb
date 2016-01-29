@@ -18,6 +18,8 @@ class TestHasher < Test::Unit::TestCase
   end
 
   def test_hash
+    assert_equal('Vmb', Hasher::hash(4635))
+    assert_equal(4635, Hasher::unhash('Vmb'))
     assert_equal('9b', Hasher::hash(123))
     assert_equal(123, Hasher::unhash('9b'))
   end

@@ -31,8 +31,13 @@ module Hasher
     str = ''
     while num > 0 do
       str += self.map(num % BASE)
-      num = num / BASE
+      num /= BASE
     end
+
+    # I've seen the reversed string returned here, but since this is an
+    # obfuscated string I don't see the purpose. When unhashing I will just
+    # walk through from beginning to end (rather than end to beginning) and
+    # return the sum.
     return str
   end
 end
