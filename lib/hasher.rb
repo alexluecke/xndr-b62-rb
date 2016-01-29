@@ -1,6 +1,11 @@
 module Hasher
 
-  ALPHABET = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split(//)
+  ALPHABET = [
+    'abcdefghijklmnopqrstuvwxyz',
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    '0123456789'
+  ].join('').split(//)
+
   BASE = ALPHABET.length
 
   def self.map num
