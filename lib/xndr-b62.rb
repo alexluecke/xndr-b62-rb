@@ -1,4 +1,4 @@
-module Hasher
+module XndrB62
 
   ALPHABET = [
     'abcdefghijklmnopqrstuvwxyz',
