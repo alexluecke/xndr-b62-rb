@@ -26,7 +26,7 @@ module Hasher
 
   def self.hash num
 
-    return map(0) if num == 0
+    return self.map(0) if num == 0
 
     str = ''
     while num > 0 do
