@@ -1,4 +1,4 @@
-require_relative '../lib/hasher.rb'
+require_relative '../lib/xndr-b62.rb'
 require 'test/unit'
 
 class TestHasher < Test::Unit::TestCase
