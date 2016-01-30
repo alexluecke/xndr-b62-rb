@@ -16,7 +16,7 @@ module XndrB62
     return ALPHABET.index(ch)
   end
 
-  def self.unhash str
+  def self.decode str
     sum=0
     str.chars.each_with_index { |ch, idx|
       sum += self.unmap(ch) * BASE**idx
@@ -24,7 +24,7 @@ module XndrB62
     return sum
   end
 
-  def self.hash num
+  def self.encode num
 
     return self.map(0) if num == 0
 
@@ -35,7 +35,7 @@ module XndrB62
     end
 
     # I've seen the reversed string returned here, but since this is an
-    # obfuscated string I don't see the purpose. When unhashing I will just
+    # obfuscated string I don't see the purpose. When decoding I will just
     # walk through from beginning to end (rather than end to beginning) and
     # return the sum.
     return str

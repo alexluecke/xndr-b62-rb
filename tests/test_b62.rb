@@ -1,27 +1,27 @@
 require_relative '../lib/xndr-b62.rb'
 require 'test/unit'
 
-class TestHasher < Test::Unit::TestCase
+class TestB62 < Test::Unit::TestCase
 
   def test_mappers
-    assert_equal('a', Hasher::map(0))
-    assert_equal('b', Hasher::map(1))
-    assert_equal('0', Hasher::map(52))
-    assert_equal('A', Hasher::map(26))
-    assert_equal('B', Hasher::map(27))
+    assert_equal('a', XndrB62::map(0))
+    assert_equal('b', XndrB62::map(1))
+    assert_equal('0', XndrB62::map(52))
+    assert_equal('A', XndrB62::map(26))
+    assert_equal('B', XndrB62::map(27))
 
-    assert_equal(0, Hasher::unmap('a'))
-    assert_equal(1, Hasher::unmap('b'))
-    assert_equal(52, Hasher::unmap('0'))
-    assert_equal(26, Hasher::unmap('A'))
-    assert_equal(27, Hasher::unmap('B'))
+    assert_equal(0, XndrB62::unmap('a'))
+    assert_equal(1, XndrB62::unmap('b'))
+    assert_equal(52, XndrB62::unmap('0'))
+    assert_equal(26, XndrB62::unmap('A'))
+    assert_equal(27, XndrB62::unmap('B'))
   end
 
-  def test_hash
-    assert_equal('Vmb', Hasher::hash(4635))
-    assert_equal(4635, Hasher::unhash('Vmb'))
-    assert_equal('9b', Hasher::hash(123))
-    assert_equal(123, Hasher::unhash('9b'))
+  def test_encoding
+    assert_equal('Vmb', XndrB62::encode(4635))
+    assert_equal(4635, XndrB62::decode('Vmb'))
+    assert_equal('9b', XndrB62::encode(123))
+    assert_equal(123, XndrB62::decode('9b'))
   end
 
 end
